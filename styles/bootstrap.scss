@@ -1,0 +1,6 @@
+// 사용자 변수를 생성(map type)
+$custom-colors: (
+  'custom-color': #5cb85c,
+);
+// merge
+$theme-colors: map-merge($theme-colors, $custom-colors);
