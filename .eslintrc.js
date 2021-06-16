@@ -25,11 +25,9 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
-    'react/react-in-jsx-scope': 0,
-    'react/prefer-stateless-function': 0,
-    'react/jsx-filename-extension': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'no-nested-ternary': 0,
+    'react/react-in-jsx-scope': 0, // nextjs는 항상 react를 import해서 규칙 필요 없음
+    'react/jsx-props-no-spreading': 0, // props ... spread 쓰고싶어서 규칙 필요 없음
+    'react/jsx-filename-extension': 0, // jsx대신 tsx를 쓰고싶어서 규칙 필요 없음
   },
 };
 
