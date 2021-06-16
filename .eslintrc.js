@@ -1,11 +1,46 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  parser: 'babel-eslint',
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
+    'airbnb',
     'plugin:prettier/recommended',
   ],
-  plugins: ['@typescript-eslint', 'react'],
-  rules: {},
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['react', 'react-hooks', 'prettier'],
+  rules: {
+    'react/react-in-jsx-scope': 0,
+    'react/prefer-stateless-function': 0,
+    'react/jsx-filename-extension': 0,
+    'react/jsx-one-expression-per-line': 0,
+    'no-nested-ternary': 0,
+  },
 };
+
+// module.exports = {
+//   parser: '@typescript-eslint/parser',
+//   extends: [
+//     'plugin:react/recommended',
+//     'plugin:@typescript-eslint/recommended',
+//     'prettier/@typescript-eslint',
+//     'plugin:prettier/recommended',
+//   ],
+//   plugins: ['@typescript-eslint', 'react'],
+//   rules: {},
+// };
