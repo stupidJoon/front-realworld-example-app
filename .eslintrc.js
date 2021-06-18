@@ -8,12 +8,18 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'airbnb',
     'plugin:prettier/recommended',
+    'airbnb',
   ],
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'], // 절대경로 import
+        extensions: ['.js', '.jsx', '.ts', '.tsx'], // import tsx 오류떠서
+      },
     },
   },
   parserOptions: {
@@ -25,20 +31,19 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ], // import tsx 오류떠서
     'react/react-in-jsx-scope': 0, // nextjs는 항상 react를 import해서 규칙 필요 없음
     'react/jsx-props-no-spreading': 0, // props ... spread 쓰고싶어서 규칙 필요 없음
     'react/jsx-filename-extension': 0, // jsx대신 tsx를 쓰고싶어서 규칙 필요 없음
+    'object-curly-newline': 0, // {} 안에 4개 이상 요소 있으면 에러떠서 규칙 필요 없음
   },
 };
-
-// module.exports = {
-//   parser: '@typescript-eslint/parser',
-//   extends: [
-//     'plugin:react/recommended',
-//     'plugin:@typescript-eslint/recommended',
-//     'prettier/@typescript-eslint',
-//     'plugin:prettier/recommended',
-//   ],
-//   plugins: ['@typescript-eslint', 'react'],
-//   rules: {},
-// };

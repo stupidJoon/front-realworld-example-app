@@ -1,22 +1,14 @@
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Gnb from 'components/Gnb';
+import Banner from 'components/Banner';
+import Feeds from 'components/Feeds';
 
 function Home() {
   return (
-    <Container>
-      <Navbar className="justify-content-between">
-        <Navbar.Brand>conduit</Navbar.Brand>
-        <Nav>
-          <Nav.Item>
-            <Nav.Link className="text-dark">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>Sign in</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>Sign up</Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </Navbar>
+    <Container fluid>
+      <Gnb />
+      <Banner />
+      <Feeds />
     </Container>
   );
 }
