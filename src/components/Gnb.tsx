@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
 function Gnb() {
@@ -5,18 +6,24 @@ function Gnb() {
     <Container>
       <Navbar className="justify-content-between">
         <Navbar.Brand className="fs-3 fw-bold text-primary">
-          conduit
+          <Link href="/">
+            <a className="text-decoration-none">conduit</a>
+          </Link>
         </Navbar.Brand>
         <Nav>
           <Nav.Item>
-            <Nav.Link className="text-dark">Home</Nav.Link>
+            <Link href="/" passHref>
+              <Nav.Link>Home</Nav.Link>
+            </Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>Sign in</Nav.Link>
+            <Link href="/signin" passHref>
+              <Nav.Link>Sign in</Nav.Link>
+            </Link>
           </Nav.Item>
-          <Nav.Item>
+          <Link href="/signup" passHref>
             <Nav.Link>Sign up</Nav.Link>
-          </Nav.Item>
+          </Link>
         </Nav>
       </Navbar>
     </Container>

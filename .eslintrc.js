@@ -45,5 +45,13 @@ module.exports = {
     'react/jsx-props-no-spreading': 0, // props ... spread 쓰고싶어서 규칙 필요 없음
     'react/jsx-filename-extension': 0, // jsx대신 tsx를 쓰고싶어서 규칙 필요 없음
     'object-curly-newline': 0, // {} 안에 4개 이상 요소 있으면 에러떠서 규칙 필요 없음
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ], // next/link > a tag에서 href없으면 나는 오류 제거
   },
 };

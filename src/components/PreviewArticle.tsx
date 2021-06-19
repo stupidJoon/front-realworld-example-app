@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Row, Col, Image, Button } from 'react-bootstrap';
 import Tag from './Tag';
 
@@ -26,16 +27,29 @@ function PreviewArticle() {
         </Col>
       </Row>
       <Row className="fs-3 fw-bold">
-        <Col>ecdew</Col>
+        <Col>
+          <Link href="/article/ecdew-a">
+            <a className="text-decoration-none text-dark">ecdew</a>
+          </Link>
+        </Col>
       </Row>
-
       <Row>
         <Col>
           <Row className="fs-5 text-secondary">
-            <Col>cewcw</Col>
+            <Col>
+              <Link href="/article/ecdew-a">
+                <a className="text-decoration-none text-secondary">cewcw</a>
+              </Link>
+            </Col>
           </Row>
           <Row className="text-secondary">
-            <Col>Read more...</Col>
+            <Col>
+              <Link href="/article/ecdew-a">
+                <a className="text-decoration-none text-secondary">
+                  Read more...
+                </a>
+              </Link>
+            </Col>
           </Row>
         </Col>
         <Col xs="auto">
