@@ -8,7 +8,7 @@ function Feeds() {
         <Feed />
       </Tab>
       <Tab eventKey="test" title="#test">
-        <p>nothello</p>
+        <Feed />
       </Tab>
     </Tabs>
   );
