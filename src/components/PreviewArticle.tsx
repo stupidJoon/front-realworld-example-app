@@ -7,7 +7,7 @@ function PreviewArticle() {
     <>
       <Row className="justify-content-between">
         <Col xs="auto">
-          <Row>
+          <Row className="align-items-center">
             <Col>
               <Image
                 style={{ width: '32px', height: '32px', borderRadius: '30px' }}
