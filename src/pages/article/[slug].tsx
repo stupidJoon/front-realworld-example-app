@@ -12,7 +12,7 @@ function Article() {
       <ArticleBanner />
       <Container>
         <Row className="justify-content-center my-5">
-          <Col xs="6">
+          <Col xs="8">
             <Row>
               <ArticleBody />
             </Row>

@@ -14,7 +14,7 @@ function Home() {
           <Col xs="8">
             <Feeds />
           </Col>
-          <Col>
+          <Col xs="4">
             <Tags />
           </Col>
         </Row>
