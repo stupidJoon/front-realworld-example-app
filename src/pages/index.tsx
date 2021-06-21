@@ -1,8 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import Gnb from 'components/Gnb';
-import Banner from 'components/Banner';
-import Feeds from 'components/Feeds';
-import Tags from 'components/Tags';
+import Gnb from 'components/presenters/Gnb';
+import Banner from 'components/presenters/Banner';
+import Feeds from 'components/presenters/Feeds';
+import Tags from 'components/containers/Tags';
 
 function Home() {
   return (

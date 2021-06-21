@@ -1,5 +1,5 @@
 import { Tabs, Tab } from 'react-bootstrap';
-import Feed from 'components/Feed';
+import Feed from 'components/containers/Feed';
 
 function Feeds() {
   return (

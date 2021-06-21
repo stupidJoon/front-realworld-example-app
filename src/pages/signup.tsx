@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Gnb from 'components/Gnb';
+import Gnb from 'components/presenters/Gnb';
 
 function Signup() {
   return (

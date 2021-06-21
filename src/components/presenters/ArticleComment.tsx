@@ -1,10 +1,16 @@
+import Comment from 'types/Comment';
 import { Card, Row, Col, Image } from 'react-bootstrap';
+import parseDate from 'utilities/parseDate';
 
-function ArticleComment() {
+interface Props {
+  comment: Comment;
+}
+
+function ArticleComment({ comment }: Props) {
   return (
     <Col xs="12">
       <Card className="p-0">
-        <Card.Body>Nice article, TY. Oh, i wrote this sh*t.</Card.Body>
+        <Card.Body>{comment.body}</Card.Body>
         <Card.Footer>
           <Row className="p-0">
             <Col xs="auto">
@@ -18,9 +24,9 @@ function ArticleComment() {
               />
             </Col>
             <Col xs="auto" className="text-primary">
-              Joh
+              {comment.author.username}
             </Col>
-            <Col xs="auto">June 20, 2021</Col>
+            <Col xs="auto">{parseDate(comment.updatedAt)}</Col>
           </Row>
         </Card.Footer>
       </Card>

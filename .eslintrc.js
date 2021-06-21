@@ -53,5 +53,11 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ], // next/link > a tag에서 href없으면 나는 오류 제거
+    'prettier/prettier': [
+      'error',
+      {
+        trailingComma: 'all',
+      },
+    ],
   },
 };

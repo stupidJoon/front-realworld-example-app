@@ -1,6 +1,12 @@
 import { Col, Image, Row, Button } from 'react-bootstrap';
+import Article from 'types/Article';
+import parseDate from 'utilities/parseDate';
 
-function ArticleUser() {
+interface Props {
+  article: Article;
+}
+
+function ArticleUser({ article }: Props) {
   return (
     <>
       <Col xs="auto">
@@ -10,12 +16,12 @@ function ArticleUser() {
         />
       </Col>
       <Col xs="auto">
-        <Row>Joh</Row>
-        <Row>June 20, 2021</Row>
+        <Row>{article?.author?.username}</Row>
+        <Row>{parseDate(article?.updatedAt)}</Row>
       </Col>
       <Col xs="auto">
         <Button variant="outline-secondary" size="sm">
-          + Follow Joh
+          {`+ Follow ${article?.author?.username}`}
         </Button>
       </Col>
       <Col xs="auto" className="px-0">
