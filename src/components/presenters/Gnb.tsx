@@ -7,6 +7,7 @@ interface Props {
 }
 
 function Gnb({ user }: Props) {
+  console.log(user);
   return (
     <Container>
       <Navbar className="justify-content-between">
@@ -21,20 +22,7 @@ function Gnb({ user }: Props) {
               <Nav.Link>Home</Nav.Link>
             </Link>
           </Nav.Item>
-          {user === null ? (
-            <>
-              <Nav.Item>
-                <Link href="/signin" passHref>
-                  <Nav.Link>Sign in</Nav.Link>
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link href="/signup" passHref>
-                  <Nav.Link>Sign up</Nav.Link>
-                </Link>
-              </Nav.Item>
-            </>
-          ) : (
+          {user ? (
             <>
               <Nav.Item>
                 <Link href="/editor" passHref>
@@ -49,6 +37,19 @@ function Gnb({ user }: Props) {
               <Nav.Item>
                 <Link href={`@${user.username}`} passHref>
                   <Nav.Link>{user.username}</Nav.Link>
+                </Link>
+              </Nav.Item>
+            </>
+          ) : (
+            <>
+              <Nav.Item>
+                <Link href="/signin" passHref>
+                  <Nav.Link>Sign in</Nav.Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link href="/signup" passHref>
+                  <Nav.Link>Sign up</Nav.Link>
                 </Link>
               </Nav.Item>
             </>
