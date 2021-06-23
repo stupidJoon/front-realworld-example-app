@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppProps } from 'next/app';
-import AuthProvider from 'components/providers/AuthProvider';
+import UserProvider from 'components/providers/UserProvider';
 import useUser from 'hooks/useUser';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useUser();
   return (
-    <AuthProvider>
+    <UserProvider>
       <Component {...pageProps} />
-    </AuthProvider>
+    </UserProvider>
   );
 }
 

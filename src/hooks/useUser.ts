@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react';
-import AuthContext from 'contexts/AuthContext';
+import AuthContext from 'contexts/UserContext';
 
 function useUser() {
   const { setUser } = useContext(AuthContext);
@@ -12,7 +12,6 @@ function useUser() {
         { headers: { Authorization: `Token ${jwtToken}` } },
       ).then((response) => response.json());
       setUser(user);
-      console.log(user);
     };
     getUser();
   });
