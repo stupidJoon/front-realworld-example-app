@@ -17,7 +17,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "src" // 절대경로 import
+    "baseUrl": "src", // 절대경로 import
+    "downlevelIteration": true
   },
   "include": [
     "next-env.d.ts",

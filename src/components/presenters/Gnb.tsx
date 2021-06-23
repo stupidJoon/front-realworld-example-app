@@ -7,7 +7,6 @@ interface Props {
 }
 
 function Gnb({ user }: Props) {
-  console.log(user);
   return (
     <Container>
       <Navbar className="justify-content-between">

@@ -3,10 +3,11 @@ import { Form, Row, Col, Button } from 'react-bootstrap';
 import Tag from 'components/presenters/Tag';
 
 interface Props {
+  tags: Set<string>;
   onTagInputPressed: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-function EditorForm({ onTagInputPressed }: Props) {
+function EditorForm({ tags, onTagInputPressed }: Props) {
   return (
     <Form>
       <Form.Group className="pb-3">
@@ -30,11 +31,9 @@ function EditorForm({ onTagInputPressed }: Props) {
         />
       </Form.Group>
       <Row>
-        <Tag tag="test" />
-        <Tag tag="test" />
-        <Tag tag="test" />
-        <Tag tag="test" />
-        <Tag tag="test" />
+        {Array.from(tags).map((tag) => (
+          <Tag key={tag} tag={tag} />
+        ))}
       </Row>
       <Row className="justify-content-end">
         <Col xs="auto">
