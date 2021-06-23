@@ -1,12 +1,15 @@
 import { useEffect, useContext } from 'react';
-import AuthContext from 'contexts/UserContext';
+import UserContext from 'contexts/UserContext';
 
 function useUser() {
-  const { setUser } = useContext(AuthContext);
+  const { setUser } = useContext(UserContext);
   useEffect(() => {
     const getUser = async () => {
       const jwtToken = localStorage.getItem('jwtToken');
-      if (jwtToken === null) return;
+      if (jwtToken === null) {
+        setUser(null);
+        return;
+      }
       let { user } = await fetch(
         'https://conduit.productionready.io/api/user',
         { headers: { Authorization: `Token ${jwtToken}` } },
@@ -14,7 +17,7 @@ function useUser() {
       setUser(user);
     };
     getUser();
-  });
+  }, []);
 }
 
 export default useUser;

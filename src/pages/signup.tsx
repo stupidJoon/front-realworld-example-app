@@ -1,11 +1,16 @@
 import Link from 'next/link';
+import { useContext } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import useUser from 'hooks/useUser';
+import UserContext from 'contexts/UserContext';
 import Gnb from 'components/presenters/Gnb';
 
 function Signup() {
+  useUser();
+  const { user } = useContext(UserContext);
   return (
     <>
-      <Gnb />
+      <Gnb user={user} />
       <Container>
         <Row className="justify-content-center">
           <Col xs="6" className="text-center">

@@ -1,5 +1,5 @@
-import UserContext from 'contexts/UserContext';
 import { ReactNode, useState } from 'react';
+import UserContext from 'contexts/UserContext';
 import User from 'types/User';
 
 interface Props {

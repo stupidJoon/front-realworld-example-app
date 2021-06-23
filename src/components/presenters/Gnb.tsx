@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import { Container, Navbar, Nav } from 'react-bootstrap';
+import UserType from 'types/User';
 
-function Gnb() {
+interface Props {
+  user: UserType;
+}
+
+function Gnb({ user }: Props) {
   return (
     <Container>
       <Navbar className="justify-content-between">
@@ -16,14 +21,38 @@ function Gnb() {
               <Nav.Link>Home</Nav.Link>
             </Link>
           </Nav.Item>
-          <Nav.Item>
-            <Link href="/signin" passHref>
-              <Nav.Link>Sign in</Nav.Link>
-            </Link>
-          </Nav.Item>
-          <Link href="/signup" passHref>
-            <Nav.Link>Sign up</Nav.Link>
-          </Link>
+          {user === null ? (
+            <>
+              <Nav.Item>
+                <Link href="/signin" passHref>
+                  <Nav.Link>Sign in</Nav.Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link href="/signup" passHref>
+                  <Nav.Link>Sign up</Nav.Link>
+                </Link>
+              </Nav.Item>
+            </>
+          ) : (
+            <>
+              <Nav.Item>
+                <Link href="/editor" passHref>
+                  <Nav.Link>📝 New Article</Nav.Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link href="/settings" passHref>
+                  <Nav.Link>⚙️ Settings</Nav.Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link href={`@${user.username}`} passHref>
+                  <Nav.Link>{user.username}</Nav.Link>
+                </Link>
+              </Nav.Item>
+            </>
+          )}
         </Nav>
       </Navbar>
     </Container>
