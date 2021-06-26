@@ -1,14 +1,17 @@
-import SignInFormPresenter from 'components/presenters/SignInForm';
+import SignUpFormPresenter from 'components/presenters/SignUpForm';
 import Router from 'next/router';
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
 
-function SignInForm() {
+function SignUpForm() {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isFailed, setIsFailed] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.type === 'email') {
+    if (event.target.type === 'text') {
+      setUsername(event.target.value);
+    } else if (event.target.type === 'email') {
       setEmail(event.target.value);
     } else {
       setPassword(event.target.value);
@@ -18,18 +21,18 @@ function SignInForm() {
   const onSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     const response = await fetch(
-      'https://conduit.productionready.io/api/users/login',
+      'https://conduit.productionready.io/api/users',
       {
         method: 'POST',
-        body: JSON.stringify({ user: { email, password } }),
+        body: JSON.stringify({ user: { username, email, password } }),
         headers: {
           'Content-Type': 'application/json',
           charset: 'utf-8',
         },
       },
     );
-    if (response.status === 421) {
-      setIsFailed(true);
+    if (response.status === 422) {
+      setErrors((await response.json()).errors);
       return;
     }
     const {
@@ -40,14 +43,15 @@ function SignInForm() {
   };
 
   return (
-    <SignInFormPresenter
+    <SignUpFormPresenter
+      username={username}
       email={email}
       password={password}
-      isFailed={isFailed}
-      onSubmit={onSubmit}
+      errors={errors}
       onChange={onChange}
+      onSubmit={onSubmit}
     />
   );
 }
 
-export default SignInForm;
+export default SignUpForm;

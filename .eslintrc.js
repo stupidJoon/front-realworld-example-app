@@ -59,5 +59,6 @@ module.exports = {
         trailingComma: 'all',
       },
     ],
+    'operator-linebreak': 0, // eslint prettier 충돌
   },
 };

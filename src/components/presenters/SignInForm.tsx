@@ -1,12 +1,12 @@
 import React from 'react';
-import { Form, Row, Col, Button } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 interface Props {
   email: string;
   password: string;
   isFailed: boolean;
-  onSubmit: (event: React.SyntheticEvent) => void;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (event: React.SyntheticEvent) => void;
 }
 
 function SignInForm({ email, password, isFailed, onSubmit, onChange }: Props) {
@@ -29,6 +29,7 @@ function SignInForm({ email, password, isFailed, onSubmit, onChange }: Props) {
             placeholder="Email"
             value={email}
             onChange={onChange}
+            required
           />
         </Form.Group>
         <Form.Group className="pb-3">
@@ -38,6 +39,7 @@ function SignInForm({ email, password, isFailed, onSubmit, onChange }: Props) {
             placeholder="Password"
             value={password}
             onChange={onChange}
+            required
           />
         </Form.Group>
         <Row className="justify-content-end">

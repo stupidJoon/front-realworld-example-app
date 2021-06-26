@@ -1,5 +1,5 @@
+import SignUpForm from 'components/containers/SignUpForm';
 import Gnb from 'components/presenters/Gnb';
-import SignUpForm from 'components/presenters/SignUpForm';
 import UserContext from 'contexts/UserContext';
 import useUser from 'hooks/useUser';
 import Link from 'next/link';
