@@ -1,8 +1,8 @@
 import Router from 'next/router';
 import { useState, SyntheticEvent, ChangeEvent } from 'react';
-import LoginFormPresenter from 'components/presenters/LoginForm';
+import SignInFormPresenter from 'components/presenters/SignInForm';
 
-function LoginForm() {
+function SignInForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isFailed, setIsFailed] = useState(false);
@@ -40,7 +40,7 @@ function LoginForm() {
   };
 
   return (
-    <LoginFormPresenter
+    <SignInFormPresenter
       email={email}
       password={password}
       isFailed={isFailed}
@@ -50,4 +50,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default SignInForm;

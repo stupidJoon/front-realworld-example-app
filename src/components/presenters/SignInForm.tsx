@@ -9,7 +9,7 @@ interface Props {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function LoginForm({ email, password, isFailed, onSubmit, onChange }: Props) {
+function SignInForm({ email, password, isFailed, onSubmit, onChange }: Props) {
   return (
     <>
       {isFailed && (
@@ -52,4 +52,4 @@ function LoginForm({ email, password, isFailed, onSubmit, onChange }: Props) {
   );
 }
 
-export default LoginForm;
+export default SignInForm;

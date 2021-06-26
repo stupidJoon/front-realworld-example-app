@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import useUser from 'hooks/useUser';
 import UserContext from 'contexts/UserContext';
 import Gnb from 'components/presenters/Gnb';
-import LoginForm from 'components/containers/LoginForm';
+import SignInForm from 'components/containers/SignInForm';
 
 function Signin() {
   useUser();
@@ -19,7 +19,7 @@ function Signin() {
             <Link href="/signup">
               <a className="text-decoration-none">Need an account?</a>
             </Link>
-            <LoginForm />
+            <SignInForm />
           </Col>
         </Row>
       </Container>

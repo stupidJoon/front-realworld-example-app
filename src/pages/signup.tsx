@@ -1,9 +1,10 @@
+import Gnb from 'components/presenters/Gnb';
+import SignUpForm from 'components/presenters/SignUpForm';
+import UserContext from 'contexts/UserContext';
+import useUser from 'hooks/useUser';
 import Link from 'next/link';
 import { useContext } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import useUser from 'hooks/useUser';
-import UserContext from 'contexts/UserContext';
-import Gnb from 'components/presenters/Gnb';
+import { Col, Container, Row } from 'react-bootstrap';
 
 function Signup() {
   useUser();
@@ -18,28 +19,7 @@ function Signup() {
             <Link href="/signin">
               <a className="text-decoration-none">Have an account?</a>
             </Link>
-            <Form>
-              <Form.Group className="py-3">
-                <Form.Control size="lg" type="text" placeholder="Username" />
-              </Form.Group>
-              <Form.Group className="pb-3">
-                <Form.Control size="lg" type="email" placeholder="Email" />
-              </Form.Group>
-              <Form.Group className="pb-3">
-                <Form.Control
-                  size="lg"
-                  type="password"
-                  placeholder="Password"
-                />
-              </Form.Group>
-              <Row className="justify-content-end">
-                <Col xs="auto">
-                  <Button size="lg" type="submit">
-                    Sign up
-                  </Button>
-                </Col>
-              </Row>
-            </Form>
+            <SignUpForm />
           </Col>
         </Row>
       </Container>
