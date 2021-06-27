@@ -1,9 +1,9 @@
-import { Container } from 'react-bootstrap';
-import Gnb from 'components/presenters/Gnb';
 import ArticleContainer from 'components/containers/Article';
+import Gnb from 'components/presenters/Gnb';
+import UserContext from 'contexts/UserContext';
 import useUser from 'hooks/useUser';
 import { useContext } from 'react';
-import UserContext from 'contexts/UserContext';
+import { Container } from 'react-bootstrap';
 
 function Article() {
   useUser();

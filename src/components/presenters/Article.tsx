@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { Container, Row, Col } from 'react-bootstrap';
-import ArticleType from 'types/Article';
+import ArticleComments from 'components/containers/ArticleComments';
 import ArticleBanner from 'components/presenters/ArticleBanner';
 import ArticleBody from 'components/presenters/ArticleBody';
 import ArticleUser from 'components/presenters/ArticleUser';
-import ArticleComments from 'components/containers/ArticleComments';
+import Link from 'next/link';
+import { Col, Container, Row } from 'react-bootstrap';
+import ArticleType from 'types/Article';
 
 interface Props {
   article: ArticleType;

@@ -1,4 +1,4 @@
-import { Col } from 'react-bootstrap';
+import ReactMarkdown from 'react-markdown';
 import Article from 'types/Article';
 
 interface Props {
@@ -6,13 +6,7 @@ interface Props {
 }
 
 function ArticleBody({ article }: Props) {
-  return (
-    <Col
-      dangerouslySetInnerHTML={{
-        __html: article?.body,
-      }}
-    />
-  );
+  return <ReactMarkdown>{article?.body}</ReactMarkdown>;
 }
 
 export default ArticleBody;

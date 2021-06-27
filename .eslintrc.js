@@ -60,5 +60,6 @@ module.exports = {
       },
     ],
     'operator-linebreak': 0, // eslint prettier 충돌
+    'react/jsx-closing-bracket-location': 0, // same as upper thing
   },
 };
