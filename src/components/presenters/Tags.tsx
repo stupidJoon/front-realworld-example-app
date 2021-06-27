@@ -11,7 +11,7 @@ function Tags({ tags }: Props) {
       <Row>Popular Tags</Row>
       <Row>
         {tags?.map((tag) => (
-          <Tag key={tag} tag={tag} />
+          <Tag key={tag} tag={tag} variant="secondary" />
         ))}
       </Row>
     </Row>

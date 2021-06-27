@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import dayjs from 'dayjs';
-import { Row, Col, Image, Button } from 'react-bootstrap';
+import Link from 'next/link';
+import { Button, Col, Image, Row } from 'react-bootstrap';
 import Article from 'types/Article';
 import Tag from './Tag';
 
@@ -18,7 +18,10 @@ function PreviewArticle({ article, isLast }: Props) {
             <Col>
               <Image
                 style={{ width: '32px', height: '32px', borderRadius: '30px' }}
-                src="https://static.productionready.io/images/smiley-cyrus.jpg"
+                src={
+                  article.author.image ??
+                  'https://static.productionready.io/images/smiley-cyrus.jpg'
+                }
               />
             </Col>
             <Col xs="auto">
@@ -66,7 +69,7 @@ function PreviewArticle({ article, isLast }: Props) {
         <Col xs="auto">
           <Row>
             {article.tagList.map((tag) => (
-              <Tag key={tag} tag={tag} />
+              <Tag key={tag} tag={tag} variant="outline-secondary" />
             ))}
           </Row>
         </Col>

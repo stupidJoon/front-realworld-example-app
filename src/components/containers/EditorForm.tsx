@@ -1,5 +1,5 @@
-import { useState, KeyboardEvent } from 'react';
 import EditorFormPresenter from 'components/presenters/EditorForm';
+import { KeyboardEvent, useState } from 'react';
 
 function EditorForm() {
   const [tags, setTags] = useState<Set<string>>(new Set());

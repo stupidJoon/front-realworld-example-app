@@ -1,5 +1,5 @@
 import TagsPresenter from 'components/presenters/Tags';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Tags() {
   const [tags, setTags] = useState<Array<string>>([]);

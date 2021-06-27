@@ -1,6 +1,6 @@
-import { KeyboardEvent } from 'react';
-import { Form, Row, Col, Button } from 'react-bootstrap';
 import Tag from 'components/presenters/Tag';
+import { KeyboardEvent } from 'react';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 interface Props {
   tags: Set<string>;
@@ -32,7 +32,7 @@ function EditorForm({ tags, onTagInputPressed }: Props) {
       </Form.Group>
       <Row>
         {Array.from(tags).map((tag) => (
-          <Tag key={tag} tag={tag} />
+          <Tag key={tag} tag={tag} variant="secondary" />
         ))}
       </Row>
       <Row className="justify-content-end">
