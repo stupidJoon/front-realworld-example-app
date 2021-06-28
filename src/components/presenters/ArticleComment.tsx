@@ -30,7 +30,7 @@ function ArticleComment({ comment, user, onDelete }: Props) {
               {comment.author.username}
             </Col>
             <Col xs="auto">{parseDate(comment.updatedAt)}</Col>
-            {user.username === comment.author.username && (
+            {user && user.username === comment.author.username && (
               <Col
                 xs="auto"
                 className="ms-auto"
