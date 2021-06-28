@@ -45,11 +45,11 @@ function Article({ article, comments, user, updateComments }: Props) {
                   <Link href="/signin">
                     <a className="text-decoration-none text-primary">Sign in</a>
                   </Link>
-                  or
+                  {' or '}
                   <Link href="/signup">
                     <a className="text-decoration-none text-primary">sign up</a>
                   </Link>
-                  to add comments on this article.
+                  {' to add comments on this article.'}
                 </Col>
               </Row>
             )}
