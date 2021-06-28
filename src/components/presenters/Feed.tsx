@@ -1,13 +1,15 @@
-import React from 'react';
+import { MouseEvent } from 'react';
 import PreviewArticle from './PreviewArticle';
 import FeedPagination from './FeedPagination';
 import Article from '../../types/Article';
 
 interface Props {
+  page: number;
   articles: Array<Article>;
+  onPaginationClick: (event: MouseEvent<HTMLElement>) => void;
 }
 
-function Feed({ articles }: Props) {
+function Feed({ page, articles, onPaginationClick }: Props) {
   return (
     <>
       {articles.map((article, index) => (
@@ -17,7 +19,7 @@ function Feed({ articles }: Props) {
           article={article}
         />
       ))}
-      <FeedPagination />
+      <FeedPagination page={page} onClick={onPaginationClick} />
     </>
   );
 }

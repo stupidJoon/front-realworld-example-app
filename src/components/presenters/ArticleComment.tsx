@@ -1,12 +1,15 @@
 import Comment from 'types/Comment';
 import { Card, Row, Col, Image } from 'react-bootstrap';
 import parseDate from 'utilities/parseDate';
+import UserType from 'types/User';
 
 interface Props {
   comment: Comment;
+  user: UserType;
+  onDelete: () => void;
 }
 
-function ArticleComment({ comment }: Props) {
+function ArticleComment({ comment, user, onDelete }: Props) {
   return (
     <Col xs="12">
       <Card className="p-0">
@@ -27,6 +30,15 @@ function ArticleComment({ comment }: Props) {
               {comment.author.username}
             </Col>
             <Col xs="auto">{parseDate(comment.updatedAt)}</Col>
+            {user.username === comment.author.username && (
+              <Col
+                xs="auto"
+                className="ms-auto"
+                style={{ cursor: 'pointer' }}
+                onClick={onDelete}>
+                🗑️
+              </Col>
+            )}
           </Row>
         </Card.Footer>
       </Card>

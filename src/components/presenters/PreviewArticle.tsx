@@ -45,7 +45,7 @@ function PreviewArticle({ article, isLast }: Props) {
           </Link>
         </Col>
       </Row>
-      <Row>
+      <Row className="align-items-end">
         <Col>
           <Row className="fs-5 text-secondary">
             <Col>
